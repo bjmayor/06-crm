@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, process::Command};
 
 use anyhow::Result;
 fn main() -> Result<()> {
@@ -14,5 +14,6 @@ fn main() -> Result<()> {
     builder
         .out_dir("./src/pb/")
         .compile(&["../protos/crm/crm.proto"], &["../protos"])?;
+    Command::new("cargo").args(["fmt"]).output().unwrap();
     Ok(())
 }

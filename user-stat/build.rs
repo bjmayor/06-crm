@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, process::Command};
 
 use anyhow::Result;
 use proto_builder_trait::tonic::BuilderAttributes;
@@ -64,6 +64,6 @@ fn main() -> Result<()> {
             &["../protos"],
         )
         .unwrap();
-
+    Command::new("cargo").args(["fmt"]).output().unwrap();
     Ok(())
 }
