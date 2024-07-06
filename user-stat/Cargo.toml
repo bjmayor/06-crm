@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default = []
+test_utils = ["sqlx-db-tester"]
 
 [dependencies]
 sqlx = { workspace = true }
@@ -21,6 +24,7 @@ fake = { version = "2.9.2", features = ["derive", "chrono"] }
 chrono = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
+sqlx-db-tester = { version = "0.4.2", optional = true }
 
 [build-dependencies]
 anyhow = { workspace = true }
@@ -32,3 +36,4 @@ proto-builder-trait = { workspace = true }
 nanoid = "0.4.0"
 rand = { workspace = true }
 serde = { workspace = true, features = ["derive"] }
+user-stat = { workspace = true, features = ["test_utils"] }

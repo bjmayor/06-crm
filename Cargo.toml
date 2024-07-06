@@ -33,3 +33,6 @@ futures = "0.3.30"
 itertools = "0.13.0"
 rand = "0.8.5"
 tokio-stream = "0.1.15"
+user-stat = { path = "user-stat" }
+crm-metadata = { path = "crm-metadata" }
+crm-send = { path = "crm-send" }
